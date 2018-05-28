@@ -15,21 +15,13 @@
           <q-icon name="menu" />
         </q-btn>
         <q-toolbar-title>
-          Quasar App
-          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
+          Conjugaison
+          <div slot="subtitle">La conjugaison des verbes français</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
 
-    <q-layout-footer v-model="footer">
-      <q-toolbar>
-        <q-btn flat round dense icon="menu" @click="left = !left" aria-label="Toggle menu on left side" />
-        <q-toolbar-title>
-          Footer
-        </q-toolbar-title>
-        <q-btn flat round dense icon="menu" @click="right = !right" aria-label="Toggle menu on right side" />
-      </q-toolbar>
-    </q-layout-footer>
+    <app-footer></app-footer>
 
     <q-layout-drawer
       v-model="leftDrawerOpen"
@@ -58,6 +50,7 @@
 </template>
 <script>
 import { openURL } from 'quasar'
+import Footer from '../components/Footer'
 
 export default {
   name: 'LayoutDefault',
@@ -68,6 +61,9 @@ export default {
   },
   methods: {
     openURL
+  },
+  components: {
+    appFooter: Footer
   }
 }
 </script>
