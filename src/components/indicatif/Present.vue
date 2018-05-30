@@ -1,11 +1,35 @@
 <template>
-    <div class="col-xs-6 col-md-4">
-      <h6>
-        Présent
-      </h6>
-      {{ $route.params.id }}
-      <button @click="add">Add</button>
-    </div>
+  <q-card>
+    <q-card-title class="text-info">
+      Présent
+    </q-card-title>
+    <q-card-main>
+      <div>
+        <p>
+          <span class="text-secondary">{{pronom()[0]}}</span><span v-html="present[0]"></span>
+        </p>
+        <p>
+          <span class="text-secondary">{{pronom()[1]}}</span><span v-html="present[1]"></span>
+        </p>
+        <p>
+          <span class="text-secondary">il </span>
+          <span v-html="present[2]"></span>
+        </p>
+        <p>
+          <span class="text-secondary">nous </span>
+          <span v-html="present[3]"></span>
+        </p>
+        <p>
+          <span class="text-secondary">vous </span>
+          <span v-html="present[4]"></span>
+        </p>
+        <p>
+          <span class="text-secondary">ils </span>
+          <span v-html="present[5]"></span>
+        </p>
+      </div>
+     </q-card-main>
+  </q-card>
 </template>
 <script>
 export default {
@@ -13,7 +37,9 @@ export default {
     this.$store.dispatch('verb/initVerb', this.$route.params.id)
   },
   computed: {
-
+    present () {
+      return ['mange', 'manges', 'mange', 'mangeons', 'mangez', 'mangent']
+    }
   },
   data () {
     return {

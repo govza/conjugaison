@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center">
+  <q-page class="flex justify-around">
     <app-indicatif></app-indicatif>
   </q-page>
 </template>

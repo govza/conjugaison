@@ -1,15 +1,14 @@
 <template>
-    <q-card>
-      <q-card-title>
-        Indicatif
-      </q-card-title>
-      <q-card-separator />
-      <q-card-main>
-        <div class="layout-padding row justify-center">
-          <app-present></app-present>
-        </div>
-      </q-card-main>
-    </q-card>
+  <div class="full-width">
+    <q-toolbar color="light">
+      <q-toolbar-title>
+        Indicatif <span class="text-primary">{{ this.$route.params.id}}</span>
+      </q-toolbar-title>
+    </q-toolbar>
+    <div class="flex justify-around">
+      <app-present></app-present>
+    </div>
+  </div>
 </template>
 
 <script>
