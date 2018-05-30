@@ -10,7 +10,9 @@
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "eslint": "^4.18.2",
@@ -22,7 +24,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.3.0",
-    "quasar-cli": "^0.15.15"
+    "quasar-cli": "^0.15.20"
   },
   "engines": {
     "node": ">= 8.9.0",
