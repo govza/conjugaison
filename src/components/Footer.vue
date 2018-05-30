@@ -1,5 +1,5 @@
 <template>
-  <q-layout-footer v-model="footer">
+  <q-layout-footer>
     <q-toolbar>
       <q-toolbar-title>
         <q-search
@@ -46,7 +46,7 @@ export default {
       }, 1000)
     },
     selected (item) {
-      this.$q.notify(`Selected verbe "${item.label}"`)
+      this.$router.push('/conjuguer/' + item.label)
     }
   }
 }

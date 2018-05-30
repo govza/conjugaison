@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh Lpr fFf" >
-    <q-layout-header v-model="header">
+    <q-layout-header>
       <q-toolbar
         color="primary"
         :inverted="$q.theme === 'ios'"

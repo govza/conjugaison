@@ -4,7 +4,8 @@ export default [
     path: '/',
     component: () => import('layouts/default'),
     children: [
-      { path: '', component: () => import('pages/index') }
+      { path: '', component: () => import('pages/index') },
+      { path: 'conjuguer/:id', component: () => import('pages/conjuguer') }
     ]
   },
 
