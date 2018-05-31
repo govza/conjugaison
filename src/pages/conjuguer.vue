@@ -11,6 +11,9 @@
 import Indicatif from '../components/indicatif/Indicatif'
 
 export default {
+  created () {
+    // this.$store.dispatch('verb/initVerb', this.$route.params.id) todo initializing from route
+  },
   components: {
     appIndicatif: Indicatif
   }

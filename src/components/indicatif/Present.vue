@@ -33,12 +33,9 @@
 </template>
 <script>
 export default {
-  created () {
-    this.$store.dispatch('verb/initVerb', this.$route.params.id)
-  },
   computed: {
     present () {
-      return ['mange', 'manges', 'mange', 'mangeons', 'mangez', 'mangent']
+      return this.$store.getters['verb/getPresent']
     }
   },
   data () {

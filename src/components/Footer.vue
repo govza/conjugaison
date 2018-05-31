@@ -46,6 +46,7 @@ export default {
       }, 1000)
     },
     selected (item) {
+      this.$store.dispatch('verb/initVerb', item)
       this.$router.push('/conjuguer/' + item.label)
     }
   }

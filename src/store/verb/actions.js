@@ -1,5 +1,3 @@
-export const initVerb = ({state, commit}, verbString) => {
-  console.log('dispatched ' + verbString)
-  let verbObj = { 'verb': verbString, 'main': 'theme' }
+export const initVerb = ({state, commit}, verbObj) => {
   commit('SET_VERB', verbObj)
 }
