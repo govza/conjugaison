@@ -1,9 +1,12 @@
 import VerbesEtre from '../../statics/data/verbes_avec_etre.json'
+
 const etreArrayPresent = ['suis', 'es', 'est', 'sommes', 'êtes', 'sont']
 const avoirArrayPresent = ['ai', 'as', 'a', 'avons', 'avez', 'ont']
 const pronomsArray = ['je', 'tu', 'il', 'nous', 'vous', 'ils']
 const avoirArrayImparfait = ['avais', 'avais', 'avait', 'avions', 'aviez', 'avaient']
 const etreArrayImparfait = ['étais', 'étais', 'était', 'étions', 'étiez', 'étaient']
+const avoirArrayPasseSimple = ['eus', 'eus', 'eut', 'eûmes', 'eûtes', 'eurent']
+const etreArrayPasseSimple = ['fus', 'fus', 'fut', 'fûmes', 'fûtes', 'furent']
 
 export const getVerbObj = state => {
   return state.verbObj.obj
@@ -33,6 +36,12 @@ export const getPlusQueParfait = state => {
 export const getPasseSimple = state => {
   let passeSimpleArray = state.verbObj.obj.indicatif['passé simple']
   let result = addPronoms(passeSimpleArray)
+  return result
+}
+export const getPasseAnterieur = state => {
+  let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
+  const infinitif = state.verbObj.obj.infinitif.présent[0]
+  let result = addEtreAvoir(infinitif, plusQueParfaitArray, etreArrayPasseSimple, avoirArrayPasseSimple)
   return result
 }
 function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
