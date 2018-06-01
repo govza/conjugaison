@@ -7,6 +7,8 @@ const avoirArrayImparfait = ['avais', 'avais', 'avait', 'avions', 'aviez', 'avai
 const etreArrayImparfait = ['étais', 'étais', 'était', 'étions', 'étiez', 'étaient']
 const avoirArrayPasseSimple = ['eus', 'eus', 'eut', 'eûmes', 'eûtes', 'eurent']
 const etreArrayPasseSimple = ['fus', 'fus', 'fut', 'fûmes', 'fûtes', 'furent']
+const avoirArrayFuturSimple = ['aurai', 'auras', 'aura', 'aurons', 'aurez', 'auront']
+const etreArrayFuturSimple = ['serai', 'seras', 'sera', 'serons', 'serez', 'seront']
 
 export const getVerbObj = state => {
   return state.verbObj.obj
@@ -42,6 +44,17 @@ export const getPasseAnterieur = state => {
   let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
   const infinitif = state.verbObj.obj.infinitif.présent[0]
   let result = addEtreAvoir(infinitif, plusQueParfaitArray, etreArrayPasseSimple, avoirArrayPasseSimple)
+  return result
+}
+export const getFuturSimple = state => {
+  let futurSimpleArray = state.verbObj.obj.indicatif['futur simple']
+  let result = addPronoms(futurSimpleArray)
+  return result
+}
+export const getFuturAnterieur = state => {
+  let futurAnterieurArray = state.verbObj.obj.indicatif['futur antérieur']
+  const infinitif = state.verbObj.obj.infinitif.présent[0]
+  let result = addEtreAvoir(infinitif, futurAnterieurArray, etreArrayFuturSimple, avoirArrayFuturSimple)
   return result
 }
 function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {

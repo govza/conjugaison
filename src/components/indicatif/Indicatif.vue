@@ -12,6 +12,8 @@
       <app-plus-que-parfait></app-plus-que-parfait>
       <app-passe-simple></app-passe-simple>
       <app-passe-anterieur></app-passe-anterieur>
+      <app-futur-simple></app-futur-simple>
+      <app-futur-anterieur></app-futur-anterieur>
     </div>
   </div>
 </template>
@@ -23,6 +25,8 @@ import Imparfait from './Imparfait'
 import PlusQueParfait from './PlusQueParfait'
 import PasseSimple from './PasseSimple'
 import PasseAnterieur from './PasseAnterieur'
+import FuturSimple from './FuturSimple'
+import FuturAnterieur from './FuturAnterieur'
 
 export default {
   name: 'Indicatif',
@@ -35,7 +39,9 @@ export default {
     appImparfait: Imparfait,
     appPlusQueParfait: PlusQueParfait,
     appPasseSimple: PasseSimple,
-    appPasseAnterieur: PasseAnterieur
+    appPasseAnterieur: PasseAnterieur,
+    appFuturSimple: FuturSimple,
+    appFuturAnterieur: FuturAnterieur
   }
 }
 </script>
