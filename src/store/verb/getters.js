@@ -1,3 +1,59 @@
+import VerbesEtre from '../../statics/data/verbes_avec_etre.json'
+const etreArray = ['suis', 'es', 'est', 'sommes', 'êtes', 'sont']
+const avoirArray = ['ai', 'as', 'a', 'avons', 'avez', 'ont']
+const pronomsArray = ['je', 'tu', 'il', 'nous', 'vous', 'ils']
+
+export const getVerbObj = state => {
+  return state.verbObj.obj
+}
 export const getPresent = state => {
-  return state.verbObj.obj.indicatif.présent
+  let presentArray = state.verbObj.obj.indicatif.présent
+  let result = addPronoms(presentArray)
+  return result
+}
+export const getPasseCompose = state => {
+  let passeComposeArray = state.verbObj.obj.indicatif['passé composé']
+  const infinitif = state.verbObj.obj.infinitif.présent[0]
+  let result = addEtreAvoir(infinitif, passeComposeArray)
+  return result
+}
+
+function addEtreAvoir (infinitif, verbsArray) {
+  let resultArray = []
+  let modPronomsArray = pronomsArray.slice()
+
+  if (VerbesEtre.includes(infinitif)) {
+    for (let i = 0; i < etreArray.length; i++) {
+      resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span>&nbsp;<span class="text-info">${etreArray[i]}</span>&nbsp;${verbsArray[i]}`)
+    }
+  } else {
+    for (let i = 0; i < pronomsArray.length; i++) {
+      if (i < 1) {
+        modPronomsArray[i] = pronomsArray[i].slice(0, -1) + '\''
+      } else {
+        modPronomsArray[i] += '&nbsp;'
+      }
+      resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span><span class="text-info">${avoirArray[i]}</span>
+        &nbsp;${verbsArray[i]}`)
+    }
+  }
+  return resultArray
+}
+
+function isMuet (verb) {
+  return (/^[aeiouh]$/i).test(verb.slice(0, 1))
+}
+
+function addPronoms (verbsArray) {
+  let modPronomsArray = pronomsArray.slice()
+  let resultArray = []
+  for (let i = 0; i < pronomsArray.length; i++) {
+    if (isMuet(verbsArray[i]) & i < 1) {
+      modPronomsArray[i] = pronomsArray[i].slice(0, -1) + '\''
+    } else {
+      modPronomsArray[i] += '&nbsp;'
+    }
+    resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span>${verbsArray[i]}`)
+  }
+  return resultArray
 }

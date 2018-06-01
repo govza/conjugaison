@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex justify-around">
+  <q-page class="flex justify-around" v-if="this.$store.state.verb">
     <app-indicatif></app-indicatif>
   </q-page>
 </template>

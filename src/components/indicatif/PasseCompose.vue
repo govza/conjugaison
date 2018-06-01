@@ -1,7 +1,7 @@
 <template>
   <q-card>
     <q-card-title class="text-info">
-      Présent
+      Passé composé
     </q-card-title>
     <q-card-main>
       <div>
@@ -31,7 +31,7 @@
 export default {
   computed: {
     getVerb () {
-      return this.$store.getters['verb/getPresent']
+      return this.$store.getters['verb/getPasseCompose']
     }
   },
   data () {
@@ -40,7 +40,6 @@ export default {
     }
   },
   methods: {
-
     add () {
     }
   }

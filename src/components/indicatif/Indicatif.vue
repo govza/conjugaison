@@ -7,12 +7,14 @@
     </q-toolbar>
     <div class="flex justify-around">
       <app-present></app-present>
+      <app-passe-compose></app-passe-compose>
     </div>
   </div>
 </template>
 
 <script>
 import Present from './Present'
+import PasseCompose from './PasseCompose'
 
 export default {
   name: 'Indicatif',
@@ -20,7 +22,8 @@ export default {
     return {}
   },
   components: {
-    appPresent: Present
+    appPresent: Present,
+    appPasseCompose: PasseCompose
   }
 }
 </script>

@@ -33,6 +33,12 @@ function parseVerbs () {
 }
 
 export default {
+  created () {
+    if (this.$route.params.id && !this.$store.state.verbObj) {
+      let result = filter(this.$route.params.id, {field: 'value', list: parseVerbs()})
+      this.$store.dispatch('verb/initVerb', result) // todo bug it's not dispatching
+    }
+  },
   data () {
     return {
       terms: '',
@@ -43,7 +49,7 @@ export default {
     search (terms, done) {
       setTimeout(() => {
         done(filter(terms, {field: 'value', list: parseVerbs()}))
-      }, 1000)
+      }, 100)
     },
     selected (item) {
       this.$store.dispatch('verb/initVerb', item)
