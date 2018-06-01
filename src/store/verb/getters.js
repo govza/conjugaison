@@ -17,6 +17,11 @@ export const getPasseCompose = state => {
   let result = addEtreAvoir(infinitif, passeComposeArray)
   return result
 }
+export const getImparfait = state => {
+  let imparfaitArray = state.verbObj.obj.indicatif['imparfait']
+  let result = addPronoms(imparfaitArray)
+  return result
+}
 
 function addEtreAvoir (infinitif, verbsArray) {
   let resultArray = []

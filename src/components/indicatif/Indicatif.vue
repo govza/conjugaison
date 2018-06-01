@@ -8,6 +8,7 @@
     <div class="flex justify-around">
       <app-present></app-present>
       <app-passe-compose></app-passe-compose>
+      <app-imparfait></app-imparfait>
     </div>
   </div>
 </template>
@@ -15,6 +16,7 @@
 <script>
 import Present from './Present'
 import PasseCompose from './PasseCompose'
+import Imparfait from './Imparfait'
 
 export default {
   name: 'Indicatif',
@@ -23,7 +25,8 @@ export default {
   },
   components: {
     appPresent: Present,
-    appPasseCompose: PasseCompose
+    appPasseCompose: PasseCompose,
+    appImparfait: Imparfait
   }
 }
 </script>
