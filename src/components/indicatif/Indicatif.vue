@@ -10,6 +10,7 @@
       <app-passe-compose></app-passe-compose>
       <app-imparfait></app-imparfait>
       <app-plus-que-parfait></app-plus-que-parfait>
+      <app-passe-simple></app-passe-simple>
     </div>
   </div>
 </template>
@@ -19,6 +20,7 @@ import Present from './Present'
 import PasseCompose from './PasseCompose'
 import Imparfait from './Imparfait'
 import PlusQueParfait from './PlusQueParfait'
+import PasseSimple from './PasseSimple'
 
 export default {
   name: 'Indicatif',
@@ -29,7 +31,8 @@ export default {
     appPresent: Present,
     appPasseCompose: PasseCompose,
     appImparfait: Imparfait,
-    appPlusQueParfait: PlusQueParfait
+    appPlusQueParfait: PlusQueParfait,
+    appPasseSimple: PasseSimple
   }
 }
 </script>

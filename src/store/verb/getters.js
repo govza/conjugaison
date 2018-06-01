@@ -30,7 +30,11 @@ export const getPlusQueParfait = state => {
   let result = addEtreAvoir(infinitif, plusQueParfaitArray, etreArrayImparfait, avoirArrayImparfait)
   return result
 }
-
+export const getPasseSimple = state => {
+  let passeSimpleArray = state.verbObj.obj.indicatif['passé simple']
+  let result = addPronoms(passeSimpleArray)
+  return result
+}
 function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
   let resultArray = []
   let modPronomsArray = pronomsArray.slice()
