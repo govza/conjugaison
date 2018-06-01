@@ -1,7 +1,9 @@
 import VerbesEtre from '../../statics/data/verbes_avec_etre.json'
-const etreArray = ['suis', 'es', 'est', 'sommes', 'êtes', 'sont']
-const avoirArray = ['ai', 'as', 'a', 'avons', 'avez', 'ont']
+const etreArrayPresent = ['suis', 'es', 'est', 'sommes', 'êtes', 'sont']
+const avoirArrayPresent = ['ai', 'as', 'a', 'avons', 'avez', 'ont']
 const pronomsArray = ['je', 'tu', 'il', 'nous', 'vous', 'ils']
+const avoirArrayImparfait = ['avais', 'avais', 'avait', 'avions', 'aviez', 'avaient']
+const etreArrayImparfait = ['étais', 'étais', 'était', 'étions', 'étiez', 'étaient']
 
 export const getVerbObj = state => {
   return state.verbObj.obj
@@ -14,7 +16,7 @@ export const getPresent = state => {
 export const getPasseCompose = state => {
   let passeComposeArray = state.verbObj.obj.indicatif['passé composé']
   const infinitif = state.verbObj.obj.infinitif.présent[0]
-  let result = addEtreAvoir(infinitif, passeComposeArray)
+  let result = addEtreAvoir(infinitif, passeComposeArray, etreArrayPresent, avoirArrayPresent)
   return result
 }
 export const getImparfait = state => {
@@ -22,8 +24,14 @@ export const getImparfait = state => {
   let result = addPronoms(imparfaitArray)
   return result
 }
+export const getPlusQueParfait = state => {
+  let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
+  const infinitif = state.verbObj.obj.infinitif.présent[0]
+  let result = addEtreAvoir(infinitif, plusQueParfaitArray, etreArrayImparfait, avoirArrayImparfait)
+  return result
+}
 
-function addEtreAvoir (infinitif, verbsArray) {
+function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
   let resultArray = []
   let modPronomsArray = pronomsArray.slice()
 
