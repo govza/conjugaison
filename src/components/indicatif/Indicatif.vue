@@ -10,6 +10,8 @@
       <app-passe-compose></app-passe-compose>
       <app-imparfait></app-imparfait>
       <app-plus-que-parfait></app-plus-que-parfait>
+    </div>
+    <div class="flex justify-around">
       <app-passe-simple></app-passe-simple>
       <app-passe-anterieur></app-passe-anterieur>
       <app-futur-simple></app-futur-simple>
@@ -47,4 +49,11 @@ export default {
 </script>
 
 <style>
+.q-card {
+  min-width: 180px;
+  margin: 20px 0 0;
+  border-radius: 0;
+  box-shadow: none;
+  outline: 1px solid #cccccc;
+}
 </style>
