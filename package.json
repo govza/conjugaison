@@ -1,10 +1,10 @@
 {
   "name": "conjugaison",
   "version": "1.0.0",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "La conjugaison des verbes français",
+  "productName": "Conjugaison App",
   "cordovaId": "org.cordova.quasar.app",
-  "author": "Rasul",
+  "author": "Rasul Akhmatkhanov",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",

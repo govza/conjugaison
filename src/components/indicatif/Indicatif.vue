@@ -47,13 +47,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.q-card {
-  min-width: 180px;
-  margin: 20px 0 0;
-  border-radius: 0;
-  box-shadow: none;
-  outline: 1px solid #cccccc;
-}
-</style>

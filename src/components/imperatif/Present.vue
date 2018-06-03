@@ -1,15 +1,19 @@
 <template>
-  <div>My component</div>
+  <q-card>
+    <q-card-title class="text-info">
+      Présent
+    </q-card-title>
+    <q-card-main>
+        <p v-for="verb in getVerb()" :key="verb" v-html="verb"></p>
+    </q-card-main>
+  </q-card>
 </template>
-
 <script>
 export default {
-  // name: 'ComponentName',
-  data () {
-    return {}
+  methods: {
+    getVerb () {
+      return this.$store.getters['verb/getImperatifPresent']
+    }
   }
 }
 </script>
-
-<style>
-</style>

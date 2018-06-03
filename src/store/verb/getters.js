@@ -11,6 +11,8 @@ const avoirArrayFuturSimple = ['aurai', 'auras', 'aura', 'aurons', 'aurez', 'aur
 const etreArrayFuturSimple = ['serai', 'seras', 'sera', 'serons', 'serez', 'seront']
 const avoirArrayCondPresent = ['aurais', 'aurais', 'aurait', 'aurions', 'auriez', 'auraient']
 const etreArrayCondPresent = ['serais', 'serais', 'serait', 'serions', 'seriez', 'seraient']
+const avoirArrayImpPresent = ['aie', 'ayons', 'ayez']
+const etreArrayImpPresent = ['sois', 'soyons', 'soyez']
 
 export const getVerbObj = state => {
   return state.verbObj.obj
@@ -51,10 +53,17 @@ export const getCondPresent = state => {
   let condPresentArray = state.verbObj.obj.conditionnel.présent
   return addPronoms(condPresentArray)
 }
-
 export const getCondPasse = state => {
   let condPasseArray = state.verbObj.obj.conditionnel['passé']
   return addEtreAvoir(state.label, condPasseArray, etreArrayCondPresent, avoirArrayCondPresent)
+}
+export const getImperatifPresent = state => {
+  let presentArray = state.verbObj.obj.impératif.présent
+  return presentArray
+}
+export const getImperatifPasse = state => {
+  let array = state.verbObj.obj.impératif.passé
+  return addEtreAvoirClean(state.label, array, etreArrayImpPresent, avoirArrayImpPresent)
 }
 
 function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
@@ -62,7 +71,7 @@ function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
   let modPronomsArray = pronomsArray.slice()
 
   if (VerbesEtre.includes(infinitif)) {
-    for (let i = 0; i < etreArray.length; i++) {
+    for (let i = 0; i < pronomsArray.length; i++) {
       resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span>&nbsp;<span class="text-info">${etreArray[i]}</span>&nbsp;${verbsArray[i]}`)
     }
   } else {
@@ -79,6 +88,22 @@ function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
   return resultArray
 }
 
+function addEtreAvoirClean (infinitif, verbsArray, etreArray, avoirArray) {
+  let resultArray = []
+
+  if (VerbesEtre.includes(infinitif)) {
+    for (let i = 0; i < verbsArray.length; i++) {
+      resultArray.push(`<span class="text-info">${etreArray[i]}</span>&nbsp;${verbsArray[i]}`)
+    }
+  } else {
+    for (let i = 0; i < verbsArray.length; i++) {
+      resultArray.push(`<span class="text-info">${avoirArray[i]}</span>
+        &nbsp;${verbsArray[i]}`)
+    }
+  }
+  return resultArray
+}
+
 function isMuet (verb) {
   return (/^[aeiouh]$/i).test(verb.slice(0, 1))
 }
@@ -86,7 +111,7 @@ function isMuet (verb) {
 function addPronoms (verbsArray) {
   let modPronomsArray = pronomsArray.slice()
   let resultArray = []
-  for (let i = 0; i < pronomsArray.length; i++) {
+  for (let i = 0; i < verbsArray.length; i++) {
     if (isMuet(verbsArray[i]) & i < 1) {
       modPronomsArray[i] = pronomsArray[i].slice(0, -1) + '\''
     } else {

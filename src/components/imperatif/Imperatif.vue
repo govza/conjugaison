@@ -5,7 +5,7 @@
         Imperatif
       </q-toolbar-title>
     </q-toolbar>
-    <div class="flex justify-around">
+    <div class="flex justify-around card-container">
       <app-present></app-present>
       <app-passe></app-passe>
     </div>
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import Present from '../conditionnel/Present'
-import Passe from '../conditionnel/Passe'
+import Present from './Present'
+import Passe from './Passe'
 
 export default {
-  name: 'Indicatif',
+  name: 'Imperatif',
   data () {
     return {}
   },
@@ -27,13 +27,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.q-card {
-  min-width: 180px;
-  margin: 20px 0 0;
-  border-radius: 0;
-  box-shadow: none;
-  outline: 1px solid #cccccc;
-}
-</style>
