@@ -23,7 +23,7 @@ export const getPresent = state => {
 }
 export const getPasseCompose = state => {
   let passeComposeArray = state.verbObj.obj.indicatif['passé composé']
-  return addEtreAvoir(state.label, passeComposeArray, etreArrayPresent, avoirArrayPresent)
+  return addEtreAvoir(state.verbObj.label, passeComposeArray, etreArrayPresent, avoirArrayPresent)
 }
 export const getImparfait = state => {
   let imparfaitArray = state.verbObj.obj.indicatif['imparfait']
@@ -31,7 +31,7 @@ export const getImparfait = state => {
 }
 export const getPlusQueParfait = state => {
   let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
-  return addEtreAvoir(state.label, plusQueParfaitArray, etreArrayImparfait, avoirArrayImparfait)
+  return addEtreAvoir(state.verbObj.label, plusQueParfaitArray, etreArrayImparfait, avoirArrayImparfait)
 }
 export const getPasseSimple = state => {
   let passeSimpleArray = state.verbObj.obj.indicatif['passé simple']
@@ -39,7 +39,7 @@ export const getPasseSimple = state => {
 }
 export const getPasseAnterieur = state => {
   let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
-  return addEtreAvoir(state.label, plusQueParfaitArray, etreArrayPasseSimple, avoirArrayPasseSimple)
+  return addEtreAvoir(state.verbObj.label, plusQueParfaitArray, etreArrayPasseSimple, avoirArrayPasseSimple)
 }
 export const getFuturSimple = state => {
   let futurSimpleArray = state.verbObj.obj.indicatif['futur simple']
@@ -47,7 +47,7 @@ export const getFuturSimple = state => {
 }
 export const getFuturAnterieur = state => {
   let futurAnterieurArray = state.verbObj.obj.indicatif['futur antérieur']
-  return addEtreAvoir(state.label, futurAnterieurArray, etreArrayFuturSimple, avoirArrayFuturSimple)
+  return addEtreAvoir(state.verbObj.label, futurAnterieurArray, etreArrayFuturSimple, avoirArrayFuturSimple)
 }
 export const getCondPresent = state => {
   let condPresentArray = state.verbObj.obj.conditionnel.présent
@@ -55,7 +55,7 @@ export const getCondPresent = state => {
 }
 export const getCondPasse = state => {
   let condPasseArray = state.verbObj.obj.conditionnel['passé']
-  return addEtreAvoir(state.label, condPasseArray, etreArrayCondPresent, avoirArrayCondPresent)
+  return addEtreAvoir(state.verbObj.label, condPasseArray, etreArrayCondPresent, avoirArrayCondPresent)
 }
 export const getImperatifPresent = state => {
   let presentArray = state.verbObj.obj.impératif.présent
@@ -63,7 +63,7 @@ export const getImperatifPresent = state => {
 }
 export const getImperatifPasse = state => {
   let array = state.verbObj.obj.impératif.passé
-  return addEtreAvoirClean(state.label, array, etreArrayImpPresent, avoirArrayImpPresent)
+  return addEtreAvoirClean(state.verbObj.label, array, etreArrayImpPresent, avoirArrayImpPresent)
 }
 
 function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
