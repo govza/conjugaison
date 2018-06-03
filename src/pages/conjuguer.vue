@@ -1,6 +1,8 @@
 <template>
   <q-page class="flex justify-around" v-if="this.$store.state.verb">
     <app-indicatif></app-indicatif>
+    <app-conditionnel class="col-md-6"></app-conditionnel>
+    <app-imperatif class="col-md-6"></app-imperatif>
   </q-page>
 </template>
 
@@ -9,13 +11,14 @@
 
 <script>
 import Indicatif from '../components/indicatif/Indicatif'
+import Conditionnel from '../components/conditionnel/Conditionnel'
+import Imperatif from '../components/imperatif/Imperatif'
 
 export default {
-  created () {
-    // this.$store.dispatch('verb/initVerb', this.$route.params.id) todo initializing from route
-  },
   components: {
-    appIndicatif: Indicatif
+    appIndicatif: Indicatif,
+    appConditionnel: Conditionnel,
+    appImperatif: Imperatif
   }
 }
 </script>

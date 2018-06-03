@@ -1,8 +1,8 @@
 <template>
   <div class="full-width">
-    <q-toolbar color="light">
-      <q-toolbar-title>
-        Indicatif <span class="text-primary">{{ this.$route.params.id}}</span>
+    <q-toolbar color="green-4">
+      <q-toolbar-title align="center">
+        Indicatif
       </q-toolbar-title>
     </q-toolbar>
     <div class="flex justify-around">
