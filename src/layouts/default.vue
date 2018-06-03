@@ -15,7 +15,7 @@
           <q-icon name="menu" />
         </q-btn>
         <q-toolbar-title>
-          Conjugaison
+          <router-link to="/" class="nostyle">Conjugaison</router-link>
           <div slot="subtitle">La conjugaison des verbes français</div>
         </q-toolbar-title>
       </q-toolbar>
@@ -37,7 +37,14 @@
           <q-item-side icon="school" />
           <q-item-main label="Mode indicatif" sublabel="Présent de l'indicatif" />
         </q-item>
-
+        <q-item @click.native="openURL('http://la-conjugaison.nouvelobs.com/regles/conjugaison/mode-conditionnel-40.php')">
+          <q-item-side icon="school" />
+          <q-item-main label="Mode conditionnel" sublabel="Emploi du conditionnel" />
+        </q-item>
+        <q-item @click.native="openURL('http://la-conjugaison.nouvelobs.com/regles/conjugaison/mode-subjonctif-41.php')">
+          <q-item-side icon="school" />
+          <q-item-main label="Mode subjonctif" sublabel="Emploi du subjonctif" />
+        </q-item>
       </q-list>
     </q-layout-drawer>
 
@@ -67,3 +74,8 @@ export default {
   }
 }
 </script>
+<style lang="stylus">
+  .nostyle
+    text-decoration none
+    color white
+</style>

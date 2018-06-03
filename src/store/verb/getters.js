@@ -20,8 +20,7 @@ export const getPresent = state => {
 }
 export const getPasseCompose = state => {
   let passeComposeArray = state.verbObj.obj.indicatif['passé composé']
-  const infinitif = state.verbObj.obj.infinitif.présent[0]
-  let result = addEtreAvoir(infinitif, passeComposeArray, etreArrayPresent, avoirArrayPresent)
+  let result = addEtreAvoir(state.label, passeComposeArray, etreArrayPresent, avoirArrayPresent)
   return result
 }
 export const getImparfait = state => {
@@ -31,8 +30,7 @@ export const getImparfait = state => {
 }
 export const getPlusQueParfait = state => {
   let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
-  const infinitif = state.verbObj.obj.infinitif.présent[0]
-  let result = addEtreAvoir(infinitif, plusQueParfaitArray, etreArrayImparfait, avoirArrayImparfait)
+  let result = addEtreAvoir(state.label, plusQueParfaitArray, etreArrayImparfait, avoirArrayImparfait)
   return result
 }
 export const getPasseSimple = state => {
@@ -42,8 +40,7 @@ export const getPasseSimple = state => {
 }
 export const getPasseAnterieur = state => {
   let plusQueParfaitArray = state.verbObj.obj.indicatif['plus-que-parfait']
-  const infinitif = state.verbObj.obj.infinitif.présent[0]
-  let result = addEtreAvoir(infinitif, plusQueParfaitArray, etreArrayPasseSimple, avoirArrayPasseSimple)
+  let result = addEtreAvoir(state.label, plusQueParfaitArray, etreArrayPasseSimple, avoirArrayPasseSimple)
   return result
 }
 export const getFuturSimple = state => {
@@ -53,8 +50,7 @@ export const getFuturSimple = state => {
 }
 export const getFuturAnterieur = state => {
   let futurAnterieurArray = state.verbObj.obj.indicatif['futur antérieur']
-  const infinitif = state.verbObj.obj.infinitif.présent[0]
-  let result = addEtreAvoir(infinitif, futurAnterieurArray, etreArrayFuturSimple, avoirArrayFuturSimple)
+  let result = addEtreAvoir(state.label, futurAnterieurArray, etreArrayFuturSimple, avoirArrayFuturSimple)
   return result
 }
 function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
