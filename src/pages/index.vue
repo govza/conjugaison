@@ -1,6 +1,12 @@
 <template>
   <q-page class="flex flex-center">
-    <q-btn v-for="item in popularVerbsArray" :key="item" :label="item" @click="conjuger(item)"/>
+    <q-btn
+      v-for="item in popularVerbsArray"
+      :key="item"
+      :label="item"
+      @click="conjuger(item)"
+      :color="randomColor()"
+    />
   </q-page>
 </template>
 
@@ -18,6 +24,10 @@ export default {
     conjuger (item) {
       this.$store.dispatch('verb/initVerb', item)
       this.$router.push('/conjuguer/' + item)
+    },
+    randomColor () {
+      let btnColors = ['primary', 'secondary', 'tertiary', 'positive', 'negative', 'info', 'warning', 'light', 'dark', 'faded']
+      return btnColors[Math.floor(Math.random() * btnColors.length)]
     }
   }
 }
