@@ -65,11 +65,13 @@ module.exports = function (ctx) {
         'QPage',
         'QPageContainer',
         'QSearch',
+        'QScrollObservable',
         'QToolbar',
         'QToolbarTitle'
       ],
       directives: [
-        'Ripple'
+        'Ripple',
+        'BackToTop'
       ],
       // Quasar plugins
       plugins: [

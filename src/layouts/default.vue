@@ -53,6 +53,15 @@
         <router-view />
       </transition>
     </q-page-container>
+    <q-btn
+      round
+      color="primary"
+      class="fixed-bottom-right"
+      style="margin: 0 5px 55px 0"
+      v-back-to-top.animate
+    >
+      <q-icon name="keyboard_arrow_up" />
+    </q-btn>
   </q-layout>
 </template>
 <script>
