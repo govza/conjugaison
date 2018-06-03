@@ -1,13 +1,15 @@
 <template>
   <div class="full-width">
-    <q-toolbar color="red-11">
+    <q-toolbar color="cyan-5">
       <q-toolbar-title align="center">
-        Imperatif
+        Subjonctif
       </q-toolbar-title>
     </q-toolbar>
     <div class="flex justify-around">
       <app-present></app-present>
       <app-passe></app-passe>
+      <app-imparfait></app-imparfait>
+      <app-plus-que-parfait></app-plus-que-parfait>
     </div>
   </div>
 </template>
@@ -15,15 +17,19 @@
 <script>
 import Present from './Present'
 import Passe from './Passe'
+import Imparfait from './Imparfait'
+import PlusQueParfait from './PlusQueParfait'
 
 export default {
-  name: 'Imperatif',
+  name: 'Subjonctif',
   data () {
     return {}
   },
   components: {
     appPresent: Present,
-    appPasse: Passe
+    appPasse: Passe,
+    appImparfait: Imparfait,
+    appPlusQueParfait: PlusQueParfait
   }
 }
 </script>
