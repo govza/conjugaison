@@ -1,5 +1,5 @@
 <template>
-  <q-card>
+  <q-card inline class="q-ma-sm">
     <q-card-title class="text-info">
       Futur antérieur
     </q-card-title>

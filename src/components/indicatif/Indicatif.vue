@@ -5,13 +5,11 @@
         Indicatif
       </q-toolbar-title>
     </q-toolbar>
-    <div class="flex justify-around">
+    <div class="row padding justify-around">
       <app-present></app-present>
       <app-passe-compose></app-passe-compose>
       <app-imparfait></app-imparfait>
       <app-plus-que-parfait></app-plus-que-parfait>
-    </div>
-    <div class="flex justify-around">
       <app-passe-simple></app-passe-simple>
       <app-passe-anterieur></app-passe-anterieur>
       <app-futur-simple></app-futur-simple>
