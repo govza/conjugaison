@@ -34,15 +34,15 @@
       >
         <q-list-header>Règles de français</q-list-header>
         <q-item @click.native="openURL('http://la-conjugaison.nouvelobs.com/regles/conjugaison/present-de-l-indicatif-5.php')">
-          <q-item-side icon="school" />
+          <q-item-side icon="check" />
           <q-item-main label="Mode indicatif" sublabel="Présent de l'indicatif" />
         </q-item>
         <q-item @click.native="openURL('http://la-conjugaison.nouvelobs.com/regles/conjugaison/mode-conditionnel-40.php')">
-          <q-item-side icon="school" />
+          <q-item-side icon="check" />
           <q-item-main label="Mode conditionnel" sublabel="Emploi du conditionnel" />
         </q-item>
         <q-item @click.native="openURL('http://la-conjugaison.nouvelobs.com/regles/conjugaison/mode-subjonctif-41.php')">
-          <q-item-side icon="school" />
+          <q-item-side icon="check" />
           <q-item-main label="Mode subjonctif" sublabel="Emploi du subjonctif" />
         </q-item>
       </q-list>

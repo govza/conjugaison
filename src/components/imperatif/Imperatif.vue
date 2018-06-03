@@ -5,7 +5,7 @@
         Imperatif
       </q-toolbar-title>
     </q-toolbar>
-    <div class="flex justify-around">
+    <div class="row padding justify-around">
       <app-present></app-present>
       <app-passe></app-passe>
     </div>

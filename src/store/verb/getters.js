@@ -102,8 +102,7 @@ function addEtreAvoir (infinitif, verbsArray, etreArray, avoirArray) {
       } else {
         modPronomsArray[i] += '&nbsp;'
       }
-      resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span><span class="text-info">${avoirArray[i]}</span>
-        &nbsp;${verbsArray[i]}`)
+      resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span><span class="text-info">${avoirArray[i]}</span>&nbsp;${verbsArray[i]}`)
     }
   }
   return resultArray
@@ -118,8 +117,7 @@ function addEtreAvoirClean (infinitif, verbsArray, etreArray, avoirArray) {
     }
   } else {
     for (let i = 0; i < verbsArray.length; i++) {
-      resultArray.push(`<span class="text-info">${avoirArray[i]}</span>
-        &nbsp;${verbsArray[i]}`)
+      resultArray.push(`<span class="text-info">${avoirArray[i]}</span>&nbsp;${verbsArray[i]}`)
     }
   }
   return resultArray
@@ -167,8 +165,7 @@ function addEtreAvoirSubj (infinitif, verbsArray, etreArray, avoirArray) {
       } else {
         modPronomsArray[i] += '&nbsp;'
       }
-      resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span><span class="text-info">${avoirArray[i]}</span>
-        &nbsp;${verbsArray[i]}`)
+      resultArray.push(`<span class="text-secondary">${modPronomsArray[i]}</span><span class="text-info">${avoirArray[i]}</span>&nbsp;${verbsArray[i]}`)
     }
   }
   return resultArray

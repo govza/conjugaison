@@ -32,12 +32,14 @@ export default {
 </script>
 
 <style>
+.q-card-title {
+  font-size: 14px;
+}
 .q-card {
+  min-width: 260px;
   min-height: 100%;
-  min-width: 180px;
-  margin: 20px 0 0;
-  border-radius: 0;
-  box-shadow: none;
-  outline: 1px solid #cccccc;
+}
+.q-card .text-secondary, .q-card .text-info {
+  font-size: 12px;
 }
 </style>
